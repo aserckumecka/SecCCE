@@ -25,7 +25,7 @@ In addition to the standard CCE requirements (AWS CLI, Maven, Java 11, S3 Bucket
    * `S3-bucket name` (e.g., cce-bucket)
    * `AWS region` (e.g., sa-east-1)
    * `AWS account ID`
-   * `Master Key ID` (e.g., e14654f1-d482-4aa9-b14e-42157be667ff)
+   * `Master Key ID` (e.g., e14654f1-d482-4aa9-b14e-42157be676ff)
 
 > ⚠️ **CRITICAL: Git Security & Repository Management**
 > Never commit the `cce.conf` file containing your real AWS Account ID or KMS Master Key ID to GitHub. Your repository must contain a robust `.gitignore` file that ignores the real configuration file. We recommend versioning only a template file (e.g., `cce.conf.example`).
