@@ -1,0 +1,20 @@
+title: Correlation rule test number 16
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x16
+description: Correlation rule created to test CCE engine - 16
+references:
+    - https://google.com/123456789x16
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    firewall.sonicwall.src_ip: '192.168.207.*'
+    webserver.php.duser: 'duser207'
+    firewall.sonicwall.dhost: 'dhost207'
+    condition: firewall.sonicwall.src_ip and webserver.php.duser and firewall.sonicwall.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

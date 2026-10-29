@@ -1,0 +1,20 @@
+title: Correlation rule test number 32
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x32
+description: Correlation rule created to test CCE engine - 32
+references:
+    - https://google.com/123456789x32
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    proxy.squid.src_ip: '192.168.176.*'
+    ids.snort.duser: 'duser176'
+    ids.snort.dhost: 'dhost176'
+    condition: proxy.squid.src_ip and ids.snort.duser and ids.snort.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

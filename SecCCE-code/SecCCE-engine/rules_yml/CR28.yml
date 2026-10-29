@@ -1,0 +1,20 @@
+title: Correlation rule test number 28
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x28
+description: Correlation rule created to test CCE engine - 28
+references:
+    - https://google.com/123456789x28
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    ids.snort.src_ip: '192.168.222.*'
+    webserver.php.duser: 'duser222'
+    firewall.ciscoasa.dhost: 'dhost222'
+    condition: ids.snort.src_ip and webserver.php.duser and firewall.ciscoasa.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

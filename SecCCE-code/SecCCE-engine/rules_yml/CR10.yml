@@ -1,0 +1,20 @@
+title: Correlation rule test number 10
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x10
+description: Correlation rule created to test CCE engine - 10
+references:
+    - https://google.com/123456789x10
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    webserver.php.src_ip: '192.168.162.*'
+    sgbd.mysql.duser: 'duser162'
+    firewall.ciscoasa.dhost: 'dhost162'
+    condition: webserver.php.src_ip and sgbd.mysql.duser and firewall.ciscoasa.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

@@ -1,0 +1,20 @@
+title: Correlation rule test number 18
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x18
+description: Correlation rule created to test CCE engine - 18
+references:
+    - https://google.com/123456789x18
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    ids.snort.src_ip: '192.168.239.*'
+    proxy.squid.duser: 'duser239'
+    proxy.squid.dhost: 'dhost239'
+    condition: ids.snort.src_ip and proxy.squid.duser and proxy.squid.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

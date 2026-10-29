@@ -1,0 +1,33 @@
+# VARIABLES USED TO IDENTIFY AND CALCULATE THE COST TO PROCESS A DEVICE RULES.
+
+# Category/Manufacturer and Device Name (It will form a unique identifier for this device).
+devname: 
+
+# Events per second (average).
+eps: 
+
+# Number of verifications associated to this device.
+ver: 
+
+# Percentage of DB inserts according to the number of EPS (average).
+ins: 
+
+# These four values are calculated using power regression and used to estimate the cost value.
+epsR: 
+verR: 
+insR: 
+conR: 
+
+# Percentage to adjust the cost (processing time) considering the last runnings.
+adj: 
+
+# Estimated cost (in milliseconds) to process the set of values for this device (eps, ver, ins).
+cost: 
+
+# Bin ID associated to this device. It is used to identify the group (lambda) to which this device belongs.
+bin: 
+
+eps_values:
+
+ins_values:
+

@@ -1,0 +1,20 @@
+title: Correlation rule test number 26
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x26
+description: Correlation rule created to test CCE engine - 26
+references:
+    - https://google.com/123456789x26
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    proxy.squid.src_ip: '192.168.68.*'
+    webserver.php.duser: 'duser68'
+    firewall.sonicwall.dhost: 'dhost68'
+    condition: proxy.squid.src_ip and webserver.php.duser and firewall.sonicwall.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

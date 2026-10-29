@@ -1,0 +1,20 @@
+title: Correlation rule test number 33
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x33
+description: Correlation rule created to test CCE engine - 33
+references:
+    - https://google.com/123456789x33
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    firewall.ciscoasa.src_ip: '192.168.208.*'
+    sgbd.postgresql.duser: 'duser208'
+    ids.snort.dhost: 'dhost208'
+    condition: firewall.ciscoasa.src_ip and sgbd.postgresql.duser and ids.snort.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

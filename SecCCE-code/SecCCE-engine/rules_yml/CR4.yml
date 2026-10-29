@@ -1,0 +1,20 @@
+title: Correlation rule test number 4
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x4
+description: Correlation rule created to test CCE engine - 4
+references:
+    - https://google.com/123456789x4
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    firewall.sonicwall.src_ip: '192.168.255.*'
+    firewall.ciscoasa.duser: 'duser255'
+    sgbd.mysql.dhost: 'dhost255'
+    condition: firewall.sonicwall.src_ip and firewall.ciscoasa.duser and sgbd.mysql.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

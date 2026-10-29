@@ -1,0 +1,28 @@
+# VARIABLES USED TO IDENTIFY AND CALCULATE THE COST TO PROCESS A DEVICE RULES.
+
+# Category/Manufacturer and Device Name (It will form a unique identifier for this device).
+devname: sgbd.mysql
+
+# Events per second (average).
+eps: 877
+
+# Number of verifications associated to this device.
+ver: 34
+
+# Percentage of DB inserts according to the number of EPS (average).
+ins: 6.0
+
+# These four values are calculated using power regression and used to estimate the cost value.
+epsR: 0.42
+verR: 0.345
+insR: 0.398
+conR: 1.645
+
+# Parameter to adjust the processing cost, according to the last runnings..
+adj: 1.0
+
+# Estimated cost (in milliseconds) to process the set of values for this device (eps, ver, ins).
+cost: 454
+
+# Bin ID associated to this device. It is used to identify the group (lambda) this device belongs to.
+bin: _75ffab0c6777f3b188e9cb55f65b760269181374

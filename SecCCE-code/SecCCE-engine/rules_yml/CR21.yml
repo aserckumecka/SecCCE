@@ -1,0 +1,20 @@
+title: Correlation rule test number 21
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x21
+description: Correlation rule created to test CCE engine - 21
+references:
+    - https://google.com/123456789x21
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    sgbd.mysql.src_ip: '192.168.109.*'
+    webserver.php.duser: 'duser109'
+    sgbd.postgresql.dhost: 'dhost109'
+    condition: sgbd.mysql.src_ip and webserver.php.duser and sgbd.postgresql.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

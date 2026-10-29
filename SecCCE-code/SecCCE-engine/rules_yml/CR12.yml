@@ -1,0 +1,20 @@
+title: Correlation rule test number 12
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x12
+description: Correlation rule created to test CCE engine - 12
+references:
+    - https://google.com/123456789x12
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    webserver.php.src_ip: '192.168.11.*'
+    ids.snort.duser: 'duser11'
+    firewall.sonicwall.dhost: 'dhost11'
+    condition: webserver.php.src_ip and ids.snort.duser and firewall.sonicwall.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

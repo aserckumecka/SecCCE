@@ -1,0 +1,20 @@
+title: Correlation rule test number 23
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x23
+description: Correlation rule created to test CCE engine - 23
+references:
+    - https://google.com/123456789x23
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    webserver.php.src_ip: '192.168.61.*'
+    firewall.ciscoasa.duser: 'duser61'
+    webserver.php.dhost: 'dhost61'
+    condition: webserver.php.src_ip and firewall.ciscoasa.duser and webserver.php.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

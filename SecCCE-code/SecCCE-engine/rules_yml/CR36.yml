@@ -1,0 +1,20 @@
+title: Correlation rule test number 36
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x36
+description: Correlation rule created to test CCE engine - 36
+references:
+    - https://google.com/123456789x36
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    firewall.sonicwall.src_ip: '192.168.46.*'
+    firewall.sonicwall.duser: 'duser46'
+    ids.snort.dhost: 'dhost46'
+    condition: firewall.sonicwall.src_ip and firewall.sonicwall.duser and ids.snort.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

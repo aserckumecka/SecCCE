@@ -1,0 +1,20 @@
+title: Correlation rule test number 2
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x2
+description: Correlation rule created to test CCE engine - 2
+references:
+    - https://google.com/123456789x2
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    firewall.sonicwall.src_ip: '192.168.134.*'
+    proxy.squid.duser: 'duser134'
+    ids.snort.dhost: 'dhost134'
+    condition: firewall.sonicwall.src_ip and proxy.squid.duser and ids.snort.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

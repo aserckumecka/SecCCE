@@ -1,0 +1,20 @@
+title: Correlation rule test number 3
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x3
+description: Correlation rule created to test CCE engine - 3
+references:
+    - https://google.com/123456789x3
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    sgbd.mysql.src_ip: '192.168.191.*'
+    firewall.ciscoasa.duser: 'duser191'
+    ids.snort.dhost: 'dhost191'
+    condition: sgbd.mysql.src_ip and firewall.ciscoasa.duser and ids.snort.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

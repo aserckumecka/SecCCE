@@ -1,0 +1,20 @@
+title: Correlation rule test number 13
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x13
+description: Correlation rule created to test CCE engine - 13
+references:
+    - https://google.com/123456789x13
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    webserver.php.src_ip: '192.168.96.*'
+    webserver.php.duser: 'duser96'
+    webserver.php.dhost: 'dhost96'
+    condition: webserver.php.src_ip and webserver.php.duser and webserver.php.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

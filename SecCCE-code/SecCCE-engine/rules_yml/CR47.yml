@@ -1,0 +1,20 @@
+title: Correlation rule test number 47
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x47
+description: Correlation rule created to test CCE engine - 47
+references:
+    - https://google.com/123456789x47
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    ids.snort.src_ip: '192.168.69.*'
+    firewall.sonicwall.duser: 'duser69'
+    firewall.ciscoasa.dhost: 'dhost69'
+    condition: ids.snort.src_ip and firewall.sonicwall.duser and firewall.ciscoasa.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

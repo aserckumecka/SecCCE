@@ -1,0 +1,20 @@
+title: Correlation rule test number 17
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x17
+description: Correlation rule created to test CCE engine - 17
+references:
+    - https://google.com/123456789x17
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    sgbd.mysql.src_ip: '192.168.49.*'
+    sgbd.postgresql.duser: 'duser49'
+    firewall.sonicwall.dhost: 'dhost49'
+    condition: sgbd.mysql.src_ip and sgbd.postgresql.duser and firewall.sonicwall.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

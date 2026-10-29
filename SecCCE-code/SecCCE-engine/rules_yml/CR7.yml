@@ -1,0 +1,20 @@
+title: Correlation rule test number 7
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x7
+description: Correlation rule created to test CCE engine - 7
+references:
+    - https://google.com/123456789x7
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    sgbd.mysql.src_ip: '192.168.103.*'
+    ids.snort.duser: 'duser103'
+    proxy.squid.dhost: 'dhost103'
+    condition: sgbd.mysql.src_ip and ids.snort.duser and proxy.squid.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

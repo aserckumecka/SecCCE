@@ -1,0 +1,20 @@
+title: Correlation rule test number 5
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x5
+description: Correlation rule created to test CCE engine - 5
+references:
+    - https://google.com/123456789x5
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    webserver.php.src_ip: '192.168.183.*'
+    ids.snort.duser: 'duser183'
+    firewall.ciscoasa.dhost: 'dhost183'
+    condition: webserver.php.src_ip and ids.snort.duser and firewall.ciscoasa.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

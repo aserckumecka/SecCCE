@@ -1,0 +1,20 @@
+title: Correlation rule test number 9
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x9
+description: Correlation rule created to test CCE engine - 9
+references:
+    - https://google.com/123456789x9
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    firewall.ciscoasa.src_ip: '192.168.17.*'
+    proxy.squid.duser: 'duser17'
+    ids.snort.dhost: 'dhost17'
+    condition: firewall.ciscoasa.src_ip and proxy.squid.duser and ids.snort.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

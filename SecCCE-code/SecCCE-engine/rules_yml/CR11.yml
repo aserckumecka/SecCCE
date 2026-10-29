@@ -1,0 +1,20 @@
+title: Correlation rule test number 11
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x11
+description: Correlation rule created to test CCE engine - 11
+references:
+    - https://google.com/123456789x11
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    proxy.squid.src_ip: '192.168.230.*'
+    firewall.sonicwall.duser: 'duser230'
+    webserver.php.dhost: 'dhost230'
+    condition: proxy.squid.src_ip and firewall.sonicwall.duser and webserver.php.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

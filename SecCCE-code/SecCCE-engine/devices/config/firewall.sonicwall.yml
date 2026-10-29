@@ -1,0 +1,28 @@
+# VARIABLES USED TO IDENTIFY AND CALCULATE THE COST TO PROCESS A DEVICE RULES.
+
+# Category/Manufacturer and Device Name (It will form a unique identifier for this device).
+devname: firewall.sonicwall
+
+# Events per second (average).
+eps: 770
+
+# Number of verifications associated to this device.
+ver: 48
+
+# Percentage of DB inserts according to the number of EPS (average).
+ins: 8.966101694915254
+
+# These four values are calculated using power regression and used to estimate the cost value.
+epsR: 0.42
+verR: 0.345
+insR: 0.398
+conR: 1.645
+
+# Parameter to adjust the processing cost, according to the last runnings..
+adj: 1.0
+
+# Estimated cost (in milliseconds) to process the set of values for this device (eps, ver, ins).
+cost: 545
+
+# Bin ID associated to this device. It is used to identify the group (lambda) this device belongs to.
+bin: _0c170d9c3a0366f160d268e2d4acc71ea0b63a62

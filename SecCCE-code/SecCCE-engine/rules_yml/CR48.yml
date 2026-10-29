@@ -1,0 +1,20 @@
+title: Correlation rule test number 48
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x48
+description: Correlation rule created to test CCE engine - 48
+references:
+    - https://google.com/123456789x48
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    sgbd.mysql.src_ip: '192.168.197.*'
+    ids.snort.duser: 'duser197'
+    firewall.sonicwall.dhost: 'dhost197'
+    condition: sgbd.mysql.src_ip and ids.snort.duser and firewall.sonicwall.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high

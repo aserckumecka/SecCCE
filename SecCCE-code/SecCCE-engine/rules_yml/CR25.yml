@@ -1,0 +1,20 @@
+title: Correlation rule test number 25
+type: Correlation
+id: 12345678-abcd-1234-abcd-123456789x25
+description: Correlation rule created to test CCE engine - 25
+references:
+    - https://google.com/123456789x25
+status: experimental
+author: 'Adriano Serckumecka'
+logsource:
+    category: many
+    product: many
+detection:
+    ids.snort.src_ip: '192.168.201.*'
+    proxy.squid.duser: 'duser201'
+    webserver.php.dhost: 'dhost201'
+    condition: ids.snort.src_ip and proxy.squid.duser and webserver.php.dhost
+timeframe: 1m
+falsepositives:
+    - unknown
+level: high
